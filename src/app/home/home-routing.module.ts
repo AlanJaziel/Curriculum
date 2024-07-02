@@ -8,6 +8,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { CertificaComponent } from './certifica/certifica.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
+import { ConsultaproyectosComponent } from './proyectos/consultaproyectos/consultaproyectos.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
     path: 'public',
     component: PublicacionComponent,
   },
+  {
+    path: 'cproy',
+    component: ConsultaproyectosComponent,
+  }
 
 ];
 

@@ -14,6 +14,7 @@ import { CertificaComponent } from './certifica/certifica.component';
 import { MainComponent } from './main/main.component';
 import { HeadComponent } from './head/head.component';
 import { FootComponent } from './foot/foot.component';
+import { ConsultaproyectosComponent } from './proyectos/consultaproyectos/consultaproyectos.component';
 
 
 @NgModule({
@@ -24,6 +25,6 @@ import { FootComponent } from './foot/foot.component';
     HomePageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [HomePage,DatosacadComponent,DatosperComponent,ExperienciaComponent,ProyectosComponent,PublicacionComponent,CertificaComponent,MainComponent,HeadComponent,FootComponent]
+  declarations: [HomePage,DatosacadComponent,DatosperComponent,ExperienciaComponent,ProyectosComponent,PublicacionComponent,CertificaComponent,MainComponent,HeadComponent,FootComponent,ConsultaproyectosComponent]
 })
 export class HomePageModule {}

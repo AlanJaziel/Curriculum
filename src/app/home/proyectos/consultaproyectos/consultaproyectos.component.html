@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <header class="bmenu">
+    <ul class="menu">
+      <li class="lett">
+        <a (click)="main()">Inicio</a>
+      </li>
+      <li class="lett">
+        <a (click)="proy()">Proyectos</a>
+      </li>
+      <li class="lett">
+        <a (click)="cproy()">Consultas</a>
+      </li>
+    </ul>
+  </header>
+  <div class="containter">
+    <div class="section">
+      <p class="c">Consulta de Proyecto</p>
+      <p>Buscar por:</p>
+      <form action="" [formGroup]="consultap" class="form">
+        <div>
+          <ng-container *ngIf="consultap.get('nombre')?.hasError('required') && (consultap.get('nombre')?.touched || consultap.get('nombre')?.dirty)" >
+            <p style="color: red;">*Los campos en rojo no pueden ir vacios*</p>
+          </ng-container>
+        </div>
+        <ion-item>
+          <ion-input label="Nombre Del Proyecto" label-placement="floating" fill="outline" placeholder="" style="margin: 10px;" type="text" formControlName="nombreproyecto"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Fecha de Inicio" label-placement="floating" fill="outline" placeholder="" style="margin: 10px;" type="date" formControlName="fecha_inicio"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Lider de Proyecto" label-placement="floating" fill="outline" placeholder="" style="margin: 10px;" type="text" formControlName="idlider"></ion-input>
+        </ion-item>
+        <ion-button block color="primary" type="submit" style="margin-top: 20px;" [disabled]="!isFormValid()" (click)="consultab()">
+          Consultar
+        </ion-button>
+      </form>
+    </div>
+    <div class="aside" *ngIf="proyecto">
+      <p class="c">Previsualizacion del Proyecto:</p>
+      <div *ngFor="let key of getProyectoKeys()">
+        <ng-container *ngIf="key !== 'idpersona'">
+          <p><strong>{{ key | titlecase }}:</strong> {{ proyecto[key] }}</p>
+        </ng-container>
+      </div>
+    </div>
+      
+  </div>
+
+  <footer>
+    <div class="pied">
+      <p>Copyright 2024</p>
+    </div>
+  </footer>
+</ion-content>
